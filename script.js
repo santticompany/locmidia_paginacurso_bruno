@@ -65,6 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    /* ==========================================================================
+       5. INTERACTIVE TESTIMONIAL VIDEO CARDS
+       ========================================================================== */
+    const videoContainers = document.querySelectorAll('.video-container');
+    
+    videoContainers.forEach(container => {
+        const video = container.querySelector('.testimonial-video');
+        
+        container.addEventListener('click', () => {
+            // Pause all other videos to prevent concurrent audio play
+            videoContainers.forEach(otherContainer => {
+                if (otherContainer !== container) {
+                    const otherVideo = otherContainer.querySelector('.testimonial-video');
+                    otherVideo.pause();
+                    otherContainer.classList.remove('playing');
+                }
+            });
 
+            if (video.paused) {
+                video.play();
+                container.classList.add('playing');
+            } else {
+                video.pause();
+                container.classList.remove('playing');
+            }
+        });
+    });
 
 });
