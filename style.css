@@ -1117,23 +1117,26 @@ body {
     flex-grow: 1;
 }
 
-/* Card SEM VDR — Lighter Blur-effect Blue theme from new feedback */
+/* Card SEM VDR — Lighter Blur-effect Red/Crimson premium theme */
 .card-sem-vdr {
-    background-color: rgba(15, 30, 61, 0.65); /* Lighter navy blue background matching the site theme */
+    background-image: 
+        radial-gradient(circle at top, rgba(255, 74, 74, 0.15) 0%, rgba(255, 74, 74, 0) 70%),
+        linear-gradient(135deg, #180909 0%, #070202 100%);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 74, 74, 0.25);
 }
 
 .card-sem-vdr .card-header {
-    background-color: rgba(26, 48, 92, 0.8); /* Slightly lighter blue for the header block */
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(90deg, #8B0000 0%, #FF4A4A 50%, #8B0000 100%);
+    border-bottom: 1.5px solid rgba(255, 74, 74, 0.25);
     padding: 24px 30px;
     display: flex;
     align-items: center;
     justify-content: center; /* Center-aligned text */
     text-align: center;
     min-height: 76px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-sem-vdr .card-header h3 {
@@ -1143,13 +1146,15 @@ body {
     letter-spacing: 0.05em;
     margin: 0;
     text-transform: uppercase;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .card-sem-vdr:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+    transform: translateY(-5px);
+    border-color: rgba(255, 74, 74, 0.45);
+    box-shadow: 0 0 45px rgba(255, 74, 74, 0.25), 0 20px 45px rgba(0, 0, 0, 0.65);
 }
+
 
 /* Card COM VDR — Lighter Blue to Soft Gold Gradient Card */
 .card-com-vdr {
@@ -1231,8 +1236,9 @@ body {
 }
 
 .circle-cross {
-    border: 1.5px solid rgba(255, 255, 255, 0.15); /* Sleek outline matching the blue/glass card background */
-    background-color: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid var(--danger); /* Crimson red outline */
+    background-color: rgba(255, 74, 74, 0.12); /* Soft red background */
+    box-shadow: 0 0 10px rgba(255, 74, 74, 0.2);
 }
 
 .circle-check {
@@ -1246,7 +1252,7 @@ body {
 }
 
 .circle-cross .svg-comparativo-icon {
-    fill: rgba(255, 255, 255, 0.55); /* Soft white cross */
+    fill: var(--danger); /* Pure danger red cross */
 }
 
 .circle-check .svg-comparativo-icon {
