@@ -93,4 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ==========================================================================
+       6. CAROUSEL ARROW NAVIGATION CONTROLS
+       ========================================================================== */
+    const scrollContainer = document.getElementById('video-carousel-scroll');
+    const navLeft = document.getElementById('video-nav-left');
+    const navRight = document.getElementById('video-nav-right');
+    
+    if (scrollContainer && navLeft && navRight) {
+        navLeft.addEventListener('click', () => {
+            const cardWidth = scrollContainer.querySelector('.video-card').offsetWidth;
+            scrollContainer.scrollBy({
+                left: -(cardWidth + 24),
+                behavior: 'smooth'
+            });
+        });
+        
+        navRight.addEventListener('click', () => {
+            const cardWidth = scrollContainer.querySelector('.video-card').offsetWidth;
+            scrollContainer.scrollBy({
+                left: cardWidth + 24,
+                behavior: 'smooth'
+            });
+        });
+    }
+
 });

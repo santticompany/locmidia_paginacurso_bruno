@@ -819,28 +819,76 @@ body {
 }
 
 .video-carousel-wrapper {
-    width: 100%;
-    padding: 30px 0;
-    overflow-x: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
     position: relative;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow: visible;
 }
 
-.video-carousel-wrapper::-webkit-scrollbar {
+/* Navigation Buttons */
+.video-carousel-wrapper .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 30, 61, 0.9);
+    border: 1.5px solid rgba(201, 168, 76, 0.45);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.video-carousel-wrapper .nav-btn:hover {
+    background: var(--accent);
+    color: #07122A;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.video-carousel-wrapper .nav-btn-left {
+    left: -24px;
+}
+
+.video-carousel-wrapper .nav-btn-right {
+    right: -24px;
+}
+
+@media (max-width: 1024px) {
+    .video-carousel-wrapper .nav-btn {
+        display: none;
+    }
+}
+
+.video-carousel-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 10px 0 30px 0;
+}
+
+.video-carousel-scroll::-webkit-scrollbar {
     display: none;
 }
 
-.video-carousel-track {
-    display: flex;
-    gap: 24px;
-    padding: 0 40px;
-    width: max-content;
-    margin: 0 auto;
-}
-
 .video-card {
-    width: 340px;
+    width: calc((100% - 48px) / 3);
+    min-width: 320px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
     background: rgba(15, 30, 61, 0.55);
     border: 1.5px solid rgba(201, 168, 76, 0.25);
     border-radius: 24px;
@@ -942,13 +990,20 @@ body {
     color: var(--text-secondary);
 }
 
+@media (max-width: 991px) {
+    .video-card {
+        width: calc((100% - 24px) / 2);
+        min-width: 280px;
+    }
+}
+
 @media (max-width: 768px) {
-    .video-carousel-track {
-        padding: 0 20px;
+    .video-carousel-scroll {
         gap: 16px;
     }
     .video-card {
-        width: 290px;
+        width: 100%;
+        min-width: 260px;
     }
     .video-container {
         height: 480px;

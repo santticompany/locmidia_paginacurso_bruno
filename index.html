@@ -38,7 +38,7 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=1.0.6">
+    <link rel="stylesheet" href="style.css?v=1.0.7">
 </head>
 
 <body>
@@ -257,14 +257,24 @@
 
         <!-- Video Testimonials Carousel -->
         <div class="video-carousel-wrapper">
-            <div class="carrossel-shadow-left"></div>
-            <div class="carrossel-shadow-right"></div>
-            <div class="video-carousel-track">
+            <!-- Navigation Buttons -->
+            <button class="nav-btn nav-btn-left" id="video-nav-left" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn nav-btn-right" id="video-nav-right" aria-label="Próximo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="video-carousel-scroll" id="video-carousel-scroll">
 
                 <!-- Video 1 -->
                 <div class="video-card">
                     <div class="video-container">
-                        <video class="testimonial-video" src="videos/IMG_0525.mp4" playsinline loop preload="metadata"></video>
+                        <video class="testimonial-video" src="videos/IMG_0525.mp4" playsinline loop preload="auto"></video>
                         <div class="video-play-overlay">
                             <div class="play-button-circle">
                                 <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -281,7 +291,7 @@
                 <!-- Video 2 -->
                 <div class="video-card">
                     <div class="video-container">
-                        <video class="testimonial-video" src="videos/IMG_0529-1.mp4" playsinline loop preload="metadata"></video>
+                        <video class="testimonial-video" src="videos/IMG_0529-1.mp4" playsinline loop preload="auto"></video>
                         <div class="video-play-overlay">
                             <div class="play-button-circle">
                                 <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -298,7 +308,7 @@
                 <!-- Video 3 -->
                 <div class="video-card">
                     <div class="video-container">
-                        <video class="testimonial-video" src="videos/IMG_0537.mp4" playsinline loop preload="metadata"></video>
+                        <video class="testimonial-video" src="videos/IMG_0537.mp4" playsinline loop preload="auto"></video>
                         <div class="video-play-overlay">
                             <div class="play-button-circle">
                                 <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -315,7 +325,7 @@
                 <!-- Video 4 -->
                 <div class="video-card">
                     <div class="video-container">
-                        <video class="testimonial-video" src="videos/Video 04.mp4" playsinline loop preload="metadata"></video>
+                        <video class="testimonial-video" src="videos/Video 04.mp4" playsinline loop preload="auto"></video>
                         <div class="video-play-overlay">
                             <div class="play-button-circle">
                                 <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -929,7 +939,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js?v=1.0.3"></script>
+    <script src="script.js?v=1.0.4"></script>
 </body>
 
 </html>
