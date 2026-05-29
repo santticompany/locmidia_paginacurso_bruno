@@ -17,3 +17,7 @@ npm-debug.log*
 
 # Node modules (just in case)
 node_modules/
+
+# Credentials / Env files
+.env
+

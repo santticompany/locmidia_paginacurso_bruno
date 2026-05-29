@@ -25,6 +25,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 html {
@@ -147,7 +158,56 @@ body {
     width: 100%;
     height: 3px;
     background-color: var(--accent);
-    z-index: 100;
+    z-index: 120;
+}
+
+/* [BANNER EXCLUSIVO RESTAURANTE] */
+.top-announcement-banner {
+    background-color: #0b51ca; /* Blue royal vibrant */
+    color: #ffffff;
+    text-align: center;
+    padding: 16px 20px;
+    font-family: var(--font-main);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 110;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.top-announcement-banner .banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.top-announcement-banner .highlight {
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* Responsividade do Banner */
+@media (max-width: 768px) {
+    .top-announcement-banner {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-announcement-banner {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+        letter-spacing: 0.03em;
+    }
 }
 
 /* Badge Estilizada */
@@ -845,10 +905,9 @@ body {
     scrollbar-width: none;  /* Firefox */
 }
 
-/* Efeito Blur/Fade nas Extremidades Laterais */
-.carrossel-wrapper::before,
-.carrossel-wrapper::after {
-    content: "";
+/* Efeito Blur/Fade nas Extremidades Laterais (Divs estáticas separadas) */
+.carrossel-shadow-left,
+.carrossel-shadow-right {
     position: absolute;
     top: 0;
     width: 160px;
@@ -857,12 +916,12 @@ body {
     pointer-events: none;
 }
 
-.carrossel-wrapper::before {
+.carrossel-shadow-left {
     left: 0;
     background: linear-gradient(90deg, #07122A 0%, rgba(7, 18, 42, 0) 100%);
 }
 
-.carrossel-wrapper::after {
+.carrossel-shadow-right {
     right: 0;
     background: linear-gradient(270deg, #07122A 0%, rgba(7, 18, 42, 0) 100%);
 }
@@ -875,7 +934,7 @@ body {
     display: flex;
     gap: 24px;
     width: max-content;
-    animation: infiniteScroll 35s linear infinite;
+    animation: infiniteScroll 15s linear infinite;
     cursor: grab;
 }
 
@@ -1585,6 +1644,11 @@ body {
 
 /* Tablets (768px) */
 @media (max-width: 768px) {
+    .carrossel-shadow-left,
+    .carrossel-shadow-right {
+        width: 40px; /* Reduced width on mobile to prevent blocking cards */
+    }
+
     .headline-card,
     .comparativo-section .section-title,
     .live-card .section-title {

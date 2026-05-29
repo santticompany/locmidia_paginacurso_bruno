@@ -32,89 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       2. CARROSSEL ADAPTATIVO (DESKTOP AUTO-SCROLL vs MOBILE SWIPE)
+       2. CARROSSEL INFINITO MARQUEE (DESKTOP & MOBILE)
        ========================================================================== */
     const carrosselWrapper = document.querySelector('.carrossel-wrapper');
     const carrosselTrack = document.getElementById('carrossel-track');
     
-    // Função para configurar comportamento baseado na largura da tela
-    function setupCarousel() {
-        const isMobile = window.innerWidth <= 768;
-        
-        if (isMobile) {
-            // No mobile, remove a animação CSS infinita para permitir o swipe nativo
-            carrosselTrack.style.animation = 'none';
-            carrosselWrapper.style.overflowX = 'auto';
-            carrosselWrapper.style.scrollSnapType = 'x mandatory';
-            
-            // Adiciona scroll snap nos cards para um swipe mais premium
-            const cards = carrosselTrack.querySelectorAll('.carrossel-card');
-            cards.forEach(card => {
-                card.style.scrollSnapAlign = 'center';
-            });
-            
-            // Opcional: auto-scroll lento no mobile quando o usuário não estiver interagindo
-            startMobileAutoScroll();
-        } else {
-            // No desktop, restaura a animação CSS ultra fluida
-            carrosselTrack.style.animation = '';
-            carrosselWrapper.style.overflowX = 'hidden';
-            carrosselWrapper.style.scrollSnapType = 'none';
-            
-            const cards = carrosselTrack.querySelectorAll('.carrossel-card');
-            cards.forEach(card => {
-                card.style.scrollSnapAlign = 'unset';
-            });
-            
-            stopMobileAutoScroll();
-        }
-    }
-    
-    // Lógica de auto-scroll suave para o Mobile
-    let mobileScrollInterval = null;
-    let isUserInteracting = false;
-    let interactionTimeout = null;
-    
-    function startMobileAutoScroll() {
-        stopMobileAutoScroll();
-        
-        mobileScrollInterval = setInterval(() => {
-            if (!isUserInteracting) {
-                const maxScrollLeft = carrosselWrapper.scrollWidth - carrosselWrapper.clientWidth;
-                
-                // Se chegou ao fim, reseta suavemente
-                if (carrosselWrapper.scrollLeft >= maxScrollLeft - 5) {
-                    carrosselWrapper.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    carrosselWrapper.scrollBy({ left: 180, behavior: 'smooth' });
-                }
-            }
-        }, 4000); // Rola a cada 4 segundos
-    }
-    
-    function stopMobileAutoScroll() {
-        if (mobileScrollInterval) {
-            clearInterval(mobileScrollInterval);
-            mobileScrollInterval = null;
-        }
-    }
-    
-    // Detecta interação do usuário no mobile para pausar o auto-scroll temporariamente
+    // O carrossel funciona 100% via CSS (infiniteScroll) de forma fluida em todas as telas.
+    // Adicionamos pausar/retomar ao tocar no mobile para melhor usabilidade.
     carrosselWrapper.addEventListener('touchstart', () => {
-        isUserInteracting = true;
-        clearTimeout(interactionTimeout);
+        carrosselTrack.style.animationPlayState = 'paused';
     }, { passive: true });
     
     carrosselWrapper.addEventListener('touchend', () => {
-        // Aguarda 5 segundos após o fim da interação para retomar o auto-scroll
-        interactionTimeout = setTimeout(() => {
-            isUserInteracting = false;
-        }, 5000);
+        carrosselTrack.style.animationPlayState = 'running';
     }, { passive: true });
-
-    // Inicializa e monitora resize da tela
-    setupCarousel();
-    window.addEventListener('resize', setupCarousel);
 
 
     /* ==========================================================================
