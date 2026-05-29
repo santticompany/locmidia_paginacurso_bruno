@@ -163,20 +163,20 @@ body {
 
 /* [BANNER EXCLUSIVO RESTAURANTE] */
 .top-announcement-banner {
-    background-color: #0b51ca; /* Blue royal vibrant */
-    color: #ffffff;
+    background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
+    color: #07122A; /* Dark navy for high premium contrast */
     text-align: center;
-    padding: 16px 20px;
+    padding: 18px 24px;
     font-family: var(--font-main);
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
     line-height: 1.4;
     text-transform: uppercase;
     position: relative;
     z-index: 110;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .top-announcement-banner .banner-content {
@@ -190,23 +190,23 @@ body {
 }
 
 .top-announcement-banner .highlight {
-    font-weight: 800;
-    color: #ffffff;
+    font-weight: 900;
+    color: #07122A;
 }
 
 /* Responsividade do Banner */
 @media (max-width: 768px) {
     .top-announcement-banner {
-        padding: 12px 16px;
-        font-size: 0.9rem;
+        padding: 14px 16px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .top-announcement-banner {
-        padding: 10px 12px;
-        font-size: 0.8rem;
-        letter-spacing: 0.03em;
+        padding: 12px 12px;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
     }
 }
 
