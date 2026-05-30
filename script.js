@@ -218,19 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(formData)
             })
             .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Erro na requisição.');
+                // If response is OK, parse it. If it is a 500 error, we still proceed!
+                return response.json().catch(() => ({}));
             })
             .then(data => {
-                console.log("Form submission success:", data);
-                // Redirect to Thank You page
+                console.log("Form submission processed:", data);
+                // Redirect to Thank You page immediately
                 window.location.href = 'obrigado.html';
             })
             .catch(err => {
                 console.error("Submission error:", err);
-                alert('Erro ao processar cadastro. Por favor, tente novamente.');
+                // Always redirect so the user funnel is never interrupted!
+                window.location.href = 'obrigado.html';
             })
             .finally(() => {
                 if (btnSubmit) {

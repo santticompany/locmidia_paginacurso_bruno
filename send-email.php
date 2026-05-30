@@ -105,7 +105,8 @@ $message = "
 // Headers
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: Lead Sistema VDR <atendimento@locmidia.digital>" . "\r\n";
+$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'locmidia.digital';
+$headers .= "From: Lead Sistema VDR <no-reply@" . $host . ">" . "\r\n";
 $headers .= "Reply-To: $email" . "\r\n";
 
 // Send email
