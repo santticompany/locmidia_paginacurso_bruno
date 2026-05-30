@@ -1907,7 +1907,7 @@ body {
     }
 
     .hero-bg-img {
-        object-position: center center; /* Perfectly centers the background image on mobile and tablet screens! */
+        object-position: center top; /* Align image to top on mobile/tablet to guarantee Bruno's face is fully visible */
     }
 
     .hero-container {
