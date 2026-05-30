@@ -224,12 +224,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 console.log("Form submission processed:", data);
                 // Redirect to Thank You page immediately
-                window.location.href = 'obrigado.html';
+                window.location.href = 'obrigado';
             })
             .catch(err => {
                 console.error("Submission error:", err);
                 // Always redirect so the user funnel is never interrupted!
-                window.location.href = 'obrigado.html';
+                window.location.href = 'obrigado';
             })
             .finally(() => {
                 if (btnSubmit) {

@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Redirect /obrigado.html to /obrigado (SEO friendly canonical redirect)
+RewriteCond %{THE_REQUEST} /obrigado\.html [NC]
+RewriteRule ^obrigado\.html$ obrigado [R=301,L]
+
+# Internally rewrite /obrigado to /obrigado.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^obrigado$ obrigado.html [L]
