@@ -124,27 +124,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalOverlay = document.getElementById('lead-modal');
     const modalClose = document.getElementById('modal-close');
     const leadForm = document.getElementById('lead-form');
-    const btnSubmit = document.getElementById('btn-submit-lead');
     const phoneInput = document.getElementById('form-telefone');
 
     // Intercept clicks on ALL CTA buttons with ".btn-glow-gold" class on landing page
     const ctaButtons = document.querySelectorAll('.btn-glow-gold:not(.btn-submit):not(#cta-obrigado)');
     
+    console.log("Found CTA Buttons for modal:", ctaButtons.length);
+    
     ctaButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log("CTA Button clicked:", btn.id || btn.className);
             openLeadModal();
         });
     });
 
     function openLeadModal() {
+        console.log("Attempting to open modal...", !!modalOverlay);
         if (modalOverlay) {
             modalOverlay.classList.add('active');
             document.body.style.overflow = 'hidden'; // prevent background scrolling
+            console.log("Modal active class added successfully.");
         }
     }
 
     function closeLeadModal() {
+        console.log("Attempting to close modal...");
         if (modalOverlay) {
             modalOverlay.classList.remove('active');
             document.body.style.overflow = ''; // restore scrolling
@@ -181,19 +186,29 @@ document.addEventListener('DOMContentLoaded', () => {
         leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            if (btnSubmit.classList.contains('loading')) return;
+            const btnSubmit = document.getElementById('btn-submit-lead');
+            if (!btnSubmit || btnSubmit.classList.contains('loading')) return;
 
             // Show loading state
             btnSubmit.classList.add('loading');
 
+            const nomeEl = document.getElementById('form-nome');
+            const emailEl = document.getElementById('form-email');
+            const telEl = document.getElementById('form-telefone');
+            const empEl = document.getElementById('form-empresa');
+            const segEl = document.getElementById('form-segmento');
+            const fatEl = document.getElementById('form-faturamento');
+
             const formData = {
-                nome: document.getElementById('form-nome').value,
-                email: document.getElementById('form-email').value,
-                telefone: document.getElementById('form-telefone').value,
-                empresa: document.getElementById('form-empresa').value,
-                segmento: document.getElementById('form-segmento').value,
-                faturamento: document.getElementById('form-faturamento').value
+                nome: nomeEl ? nomeEl.value : '',
+                email: emailEl ? emailEl.value : '',
+                telefone: telEl ? telEl.value : '',
+                empresa: empEl ? empEl.value : '',
+                segmento: segEl ? segEl.value : '',
+                faturamento: fatEl ? fatEl.value : ''
             };
+
+            console.log("Submitting form data:", formData);
 
             fetch('send-email.php', {
                 method: 'POST',
@@ -209,15 +224,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Erro na requisição.');
             })
             .then(data => {
+                console.log("Form submission success:", data);
                 // Redirect to Thank You page
                 window.location.href = 'obrigado.html';
             })
             .catch(err => {
-                console.error(err);
+                console.error("Submission error:", err);
                 alert('Erro ao processar cadastro. Por favor, tente novamente.');
             })
             .finally(() => {
-                btnSubmit.classList.remove('loading');
+                if (btnSubmit) {
+                    btnSubmit.classList.remove('loading');
+                }
             });
         });
     }
