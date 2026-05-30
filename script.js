@@ -118,4 +118,108 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ==========================================================================
+       7. LEAD MODAL CONTROL, PHONE MASK & AJAX SUBMISSION
+       ========================================================================== */
+    const modalOverlay = document.getElementById('lead-modal');
+    const modalClose = document.getElementById('modal-close');
+    const leadForm = document.getElementById('lead-form');
+    const btnSubmit = document.getElementById('btn-submit-lead');
+    const phoneInput = document.getElementById('form-telefone');
+
+    // Intercept clicks on ALL CTA buttons with ".btn-glow-gold" class on landing page
+    const ctaButtons = document.querySelectorAll('.btn-glow-gold:not(.btn-submit):not(#cta-obrigado)');
+    
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openLeadModal();
+        });
+    });
+
+    function openLeadModal() {
+        if (modalOverlay) {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // prevent background scrolling
+        }
+    }
+
+    function closeLeadModal() {
+        if (modalOverlay) {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // restore scrolling
+        }
+    }
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeLeadModal);
+    }
+
+    // Close on overlay background click
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeLeadModal();
+            }
+        });
+    }
+
+    // Phone Input Brazil Formatting Mask (e.g. (99) 99999-9999)
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            if (!x[2]) {
+                e.target.value = x[1];
+            } else {
+                e.target.value = '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            }
+        });
+    }
+
+    // AJAX POST Submission
+    if (leadForm) {
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (btnSubmit.classList.contains('loading')) return;
+
+            // Show loading state
+            btnSubmit.classList.add('loading');
+
+            const formData = {
+                nome: document.getElementById('form-nome').value,
+                email: document.getElementById('form-email').value,
+                telefone: document.getElementById('form-telefone').value,
+                empresa: document.getElementById('form-empresa').value,
+                segmento: document.getElementById('form-segmento').value,
+                faturamento: document.getElementById('form-faturamento').value
+            };
+
+            fetch('send-email.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Erro na requisição.');
+            })
+            .then(data => {
+                // Redirect to Thank You page
+                window.location.href = 'obrigado.html';
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Erro ao processar cadastro. Por favor, tente novamente.');
+            })
+            .finally(() => {
+                btnSubmit.classList.remove('loading');
+            });
+        });
+    }
+
 });

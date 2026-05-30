@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Quase lá! — Sistema VDR™</title>
+    <link rel="icon" type="image/png" href="images/favicon%20locmidia.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- Inline Premium Styles for Obrigado Page -->
+    <style>
+        :root {
+            --bg-global: #07122A;
+            --accent: #C9A84C;
+            --accent-glow: rgba(201, 168, 76, 0.4);
+            --text-primary: #FFFFFF;
+            --text-secondary: #C5D0E0;
+            --card-dark: #0F1E3D;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-global);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Gold side glow */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, rgba(201, 168, 76, 0) 70%);
+            filter: blur(100px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .main-content {
+            max-width: 600px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Logo / Header */
+        .logo-header {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #C9A84C;
+            text-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Progress Bar Widget */
+        .progress-container {
+            width: 100%;
+            max-width: 420px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 4px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            height: 28px;
+            width: 0%;
+            background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+        }
+
+        .progress-text {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #07122A;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.5s ease 0.8s;
+        }
+
+        /* Titles */
+        .title-step {
+            font-size: 2.1rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+
+        .subtitle-step {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 480px;
+            margin-bottom: 16px;
+        }
+
+        /* Premium Gold Button */
+        .btn-obrigado {
+            display: inline-block;
+            width: 100%;
+            max-width: 380px;
+            padding: 20px 36px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+            background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
+            color: #07122A;
+            box-shadow: 0 0 30px rgba(201, 168, 76, 0.5), 0 10px 30px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        .btn-obrigado::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(35deg);
+            animation: buttonShine 3s infinite linear;
+        }
+
+        .btn-obrigado:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 45px rgba(201, 168, 76, 0.7), 0 15px 35px rgba(0, 0, 0, 0.45);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 25px rgba(201, 168, 76, 0.4), 0 10px 30px rgba(0, 0, 0, 0.35); }
+            50% { box-shadow: 0 0 40px rgba(201, 168, 76, 0.7), 0 10px 30px rgba(0, 0, 0, 0.35); }
+        }
+
+        @keyframes buttonShine {
+            0% { left: -60%; }
+            15%, 100% { left: 140%; }
+        }
+
+        /* Info Card */
+        .info-card {
+            background: rgba(15, 30, 61, 0.45);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 18px;
+            padding: 24px 32px;
+            width: 100%;
+            max-width: 440px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+        }
+
+        .info-icon {
+            font-size: 1.4rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-text {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .info-text strong {
+            color: #FFFFFF;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+            margin-top: 40px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .logo-header {
+                font-size: 1.8rem;
+            }
+            .title-step {
+                font-size: 1.6rem;
+            }
+            .subtitle-step {
+                font-size: 0.85rem;
+            }
+            .btn-obrigado {
+                padding: 16px 28px;
+                font-size: 0.88rem;
+            }
+            .info-card {
+                padding: 20px;
+            }
+            .info-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="main-content">
+        <!-- Logo / Header -->
+        <h1 class="logo-header">SISTEMA VDR™</h1>
+
+        <!-- Animated Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">
+                <span class="progress-text" id="progressText">Inscrição quase concluída...</span>
+            </div>
+        </div>
+
+        <!-- Call to Action Headings -->
+        <h2 class="title-step">Falta apenas 1 passo...</h2>
+        <p class="subtitle-step">CLIQUE NO BOTÃO ABAIXO E ENTRE NO GRUPO EXCLUSIVO DO WHATSAPP.</p>
+
+        <!-- Big Gold Glow Button -->
+        <a href="https://chat.whatsapp.com/exemplo" id="cta-obrigado" class="btn-obrigado">
+            Entrar no grupo agora
+        </a>
+
+        <!-- Event Details Widget -->
+        <div class="info-card">
+            <div class="info-row">
+                <span class="info-icon">📅</span>
+                <p class="info-text">No dia <strong>04 de Junho (Terça-feira)</strong>, às <strong>20h</strong></p>
+            </div>
+            <div class="info-row">
+                <span class="info-icon">🖥️</span>
+                <p class="info-text">Encontro <strong>online</strong> e <strong>100% exclusivo</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Locmídia © 2026 — Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Animated Progress script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bar = document.getElementById('progressBar');
+            const text = document.getElementById('progressText');
+            
+            // Animate progress bar to 85% width on load
+            setTimeout(() => {
+                bar.style.width = '85%';
+                text.style.opacity = '1';
+            }, 300);
+        });
+    </script>
+
+</body>
+
+</html>
