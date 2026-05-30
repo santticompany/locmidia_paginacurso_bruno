@@ -2,18 +2,23 @@
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
-    --bg-global: #07122A;       /* Azul marinho escuro */
-    --primary: #1A4FBB;         /* Azul royal */
-    --accent: #C9A84C;          /* Dourado premium */
+    --bg-global: #07122A;
+    /* Azul marinho escuro */
+    --primary: #1A4FBB;
+    /* Azul royal */
+    --accent: #C9A84C;
+    /* Dourado premium */
     --accent-glow: rgba(201, 168, 76, 0.4);
     --text-primary: #FFFFFF;
     --text-secondary: #C5D0E0;
     --card-dark: #0F1E3D;
-    --card-light: #F5F2EB;      /* Off-white quente */
-    --danger: #FF4A4A;          /* Vermelho para o comparativo "Sem VDR" */
-    
+    --card-light: #F5F2EB;
+    /* Off-white quente */
+    --danger: #FF4A4A;
+    /* Vermelho para o comparativo "Sem VDR" */
+
     --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    
+
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-card: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 }
@@ -31,7 +36,8 @@
     user-select: none;
 }
 
-input, textarea {
+input,
+textarea {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
@@ -95,7 +101,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: #C9A84C; /* Fallback for older browsers */
+    color: #C9A84C;
+    /* Fallback for older browsers */
     font-weight: 700;
 }
 
@@ -123,7 +130,8 @@ body {
     filter: blur(120px);
     pointer-events: none;
     z-index: -1;
-    opacity: 0.08; /* Very subtle gold light */
+    opacity: 0.08;
+    /* Very subtle gold light */
 }
 
 .glow-hero {
@@ -139,7 +147,8 @@ body {
     left: -15%;
     width: 550px;
     height: 550px;
-    background: radial-gradient(circle, var(--accent) 0%, transparent 70%); /* Unified to premium VDR Gold */
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    /* Unified to premium VDR Gold */
 }
 
 .glow-bio {
@@ -164,7 +173,8 @@ body {
 /* [BANNER EXCLUSIVO RESTAURANTE] */
 .top-announcement-banner {
     background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
-    color: #07122A; /* Dark navy for high premium contrast */
+    color: #07122A;
+    /* Dark navy for high premium contrast */
     text-align: center;
     padding: 18px 24px;
     font-family: var(--font-main);
@@ -254,7 +264,8 @@ body {
 
 .btn-primary {
     background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
-    color: #07122A; /* Dark navy text for high contrast on the premium VDR gold gradient */
+    color: #07122A;
+    /* Dark navy text for high contrast on the premium VDR gold gradient */
     font-weight: 800;
 }
 
@@ -288,9 +299,17 @@ body {
 }
 
 @keyframes ctaShine {
-    0% { left: -60%; }
-    15% { left: 140%; }
-    100% { left: 140%; }
+    0% {
+        left: -60%;
+    }
+
+    15% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
 }
 
 .cta-wrapper {
@@ -307,7 +326,8 @@ body {
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(26, 79, 187, 0.15);
-    overflow: hidden; /* Prevent background images from bleeding outside */
+    overflow: hidden;
+    /* Prevent background images from bleeding outside */
 }
 
 /* Imagem de Fundo Responsiva (Dobra 1) */
@@ -325,21 +345,26 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 30% top; /* Anchors the horizontal position at 30%: this correctly pushes Bruno Cezar further to the right (away from the text) while keeping him fully visible on smaller screens and beautifully framed on large 27" monitors */
+    object-position: 30% top;
+    /* Anchors the horizontal position at 30%: this correctly pushes Bruno Cezar further to the right (away from the text) while keeping him fully visible on smaller screens and beautifully framed on large 27" monitors */
 }
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Gives the text container about 60% of width on the left, keeping it wide and un-cramped */
+    grid-template-columns: 1.2fr 0.8fr;
+    /* Gives the text container about 60% of width on the left, keeping it wide and un-cramped */
     gap: 48px;
     align-items: center;
     position: relative;
-    z-index: 5; /* Sit neatly in front of the background */
+    z-index: 5;
+    /* Sit neatly in front of the background */
 }
 
 .hero-content {
-    grid-column: 1; /* Places the text container back to the LEFT side on desktop/wide viewports */
-    max-width: 580px; /* Perfectly occupies 50% of the section on the left with excellent readability */
+    grid-column: 1;
+    /* Places the text container back to the LEFT side on desktop/wide viewports */
+    max-width: 580px;
+    /* Perfectly occupies 50% of the section on the left with excellent readability */
     width: 100%;
     position: relative;
     z-index: 10;
@@ -358,7 +383,7 @@ body {
 }
 
 .headline-primary {
-    font-size: 3.1rem;
+    font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 24px;
@@ -371,7 +396,7 @@ body {
 }
 
 .subheadline {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 36px;
@@ -536,10 +561,12 @@ body {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7);
     }
+
     70% {
         transform: scale(1);
         box-shadow: 0 0 0 10px rgba(201, 168, 76, 0);
     }
+
     100% {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(201, 168, 76, 0);
@@ -558,7 +585,7 @@ body {
 .card-light {
     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.65) 0%, rgba(245, 242, 235, 0.1) 100%), var(--card-light);
     /* Elegant and extremely subtle mathematical dotted grid texture */
-    background-image: 
+    background-image:
         radial-gradient(circle at center, rgba(255, 255, 255, 0.65) 0%, rgba(245, 242, 235, 0.1) 100%),
         radial-gradient(rgba(7, 18, 42, 0.05) 1.2px, transparent 1.2px);
     background-size: 100% 100%, 18px 18px;
@@ -594,7 +621,8 @@ body {
 }
 
 .headline-card {
-    font-size: 2.8rem; /* Upgraded to match other titles */
+    font-size: 2.8rem;
+    /* Upgraded to match other titles */
     font-weight: 800;
     line-height: 1.35;
     text-align: center;
@@ -728,7 +756,8 @@ body {
 
 /* Rótulos e Textos */
 .label-group {
-    pointer-events: none; /* Garante que o hover passe para os círculos */
+    pointer-events: none;
+    /* Garante que o hover passe para os círculos */
 }
 
 .label-title {
@@ -971,7 +1000,8 @@ body {
 .play-icon {
     width: 28px;
     height: 28px;
-    margin-left: 4px; /* offset visual balance */
+    margin-left: 4px;
+    /* offset visual balance */
 }
 
 .video-info {
@@ -1002,10 +1032,12 @@ body {
     .video-carousel-scroll {
         gap: 16px;
     }
+
     .video-card {
         width: 100%;
         min-width: 260px;
     }
+
     .video-container {
         height: 480px;
     }
@@ -1113,8 +1145,10 @@ body {
     padding: 10px 0;
     overflow: hidden;
     position: relative;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* Efeito Blur/Fade nas Extremidades Laterais (Divs estáticas separadas) */
@@ -1139,7 +1173,8 @@ body {
 }
 
 .carrossel-wrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    display: none;
+    /* Chrome, Safari and Opera */
 }
 
 .carrossel-track {
@@ -1158,6 +1193,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         /* Desloca exatamente a largura dos 7 cards originais + gaps */
         transform: translateX(calc(-300px * 7 - 24px * 7));
@@ -1302,14 +1338,17 @@ body {
 .comparativo-section .section-title {
     max-width: 800px;
     margin: 0 auto 60px auto;
-    font-size: 2.8rem !important; /* Enlarge to match others */
-    text-align: center !important; /* Force centering */
+    font-size: 2.8rem !important;
+    /* Enlarge to match others */
+    text-align: center !important;
+    /* Force centering */
 }
 
 .comparativo-widget {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px; /* Separates the cards just like reference 2 */
+    gap: 30px;
+    /* Separates the cards just like reference 2 */
     max-width: 1000px;
     margin: 0 auto 48px auto;
 }
@@ -1331,7 +1370,7 @@ body {
 
 /* Card SEM VDR — Lighter Blur-effect Red/Crimson premium theme */
 .card-sem-vdr {
-    background-image: 
+    background-image:
         radial-gradient(circle at top, rgba(255, 74, 74, 0.15) 0%, rgba(255, 74, 74, 0) 70%),
         linear-gradient(135deg, #180909 0%, #070202 100%);
     backdrop-filter: blur(15px);
@@ -1345,7 +1384,8 @@ body {
     padding: 24px 30px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center-aligned text */
+    justify-content: center;
+    /* Center-aligned text */
     text-align: center;
     min-height: 76px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -1370,9 +1410,9 @@ body {
 
 /* Card COM VDR — Lighter Blue to Soft Gold Gradient Card */
 .card-com-vdr {
-    background-image: 
+    background-image:
         radial-gradient(circle at top, rgba(201, 168, 76, 0.12) 0%, rgba(201, 168, 76, 0) 70%),
-        linear-gradient(135deg, #0F2042 0%, #292110 100%), 
+        linear-gradient(135deg, #0F2042 0%, #292110 100%),
         linear-gradient(135deg, #BA943F 0%, #F5DB94 30%, #E2C26F 70%, #9E7D31 100%);
     border: 1.5px solid transparent;
     background-clip: padding-box, padding-box, border-box;
@@ -1385,20 +1425,23 @@ body {
     padding: 24px 30px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center-aligned text */
+    justify-content: center;
+    /* Center-aligned text */
     text-align: center;
     min-height: 76px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .card-com-vdr .card-header h3 {
-    color: #FFFFFF; /* High-contrast white text like the reference! */
+    color: #FFFFFF;
+    /* High-contrast white text like the reference! */
     font-size: 1.2rem;
     font-weight: 800;
     letter-spacing: 0.05em;
     margin: 0;
     text-transform: uppercase;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Text shadow for incredible readability */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    /* Text shadow for incredible readability */
 }
 
 .card-com-vdr:hover {
@@ -1427,12 +1470,15 @@ body {
 }
 
 .card-sem-vdr .list-text {
-    color: #C5D0E0; /* Soft highly readable silver-blue text matching the new blue background */
+    color: #C5D0E0;
+    /* Soft highly readable silver-blue text matching the new blue background */
 }
 
 .card-com-vdr .list-text {
-    color: #FFFFFF; /* High-contrast white text */
-    font-weight: 600; /* slightly bolder for premium readability */
+    color: #FFFFFF;
+    /* High-contrast white text */
+    font-weight: 600;
+    /* slightly bolder for premium readability */
 }
 
 /* Ícones Circulares */
@@ -1448,8 +1494,10 @@ body {
 }
 
 .circle-cross {
-    border: 1.5px solid var(--danger); /* Crimson red outline */
-    background-color: rgba(255, 74, 74, 0.12); /* Soft red background */
+    border: 1.5px solid var(--danger);
+    /* Crimson red outline */
+    background-color: rgba(255, 74, 74, 0.12);
+    /* Soft red background */
     box-shadow: 0 0 10px rgba(255, 74, 74, 0.2);
 }
 
@@ -1464,7 +1512,8 @@ body {
 }
 
 .circle-cross .svg-comparativo-icon {
-    fill: var(--danger); /* Pure danger red cross */
+    fill: var(--danger);
+    /* Pure danger red cross */
 }
 
 .circle-check .svg-comparativo-icon {
@@ -1495,9 +1544,12 @@ body {
 }
 
 .live-card .section-title {
-    color: #07122A !important; /* Dark navy title on the light container card */
-    font-size: 2.8rem !important; /* Enlarge to match others */
-    text-align: center !important; /* Force centering */
+    color: #07122A !important;
+    /* Dark navy title on the light container card */
+    font-size: 2.8rem !important;
+    /* Enlarge to match others */
+    text-align: center !important;
+    /* Force centering */
 }
 
 /* Grid/Flex das Trilhas (Centered Flexbox) */
@@ -1512,15 +1564,17 @@ body {
 
 .trilha-card {
     flex: 1 1 300px;
-    max-width: 320px; /* Aligns 3 columns perfectly inside the padded light card container */
-    background-image: 
-        linear-gradient(#07122A, #07122A), 
+    max-width: 320px;
+    /* Aligns 3 columns perfectly inside the padded light card container */
+    background-image:
+        linear-gradient(#07122A, #07122A),
         linear-gradient(135deg, rgba(168, 134, 58, 0.25) 0%, rgba(201, 168, 76, 0.25) 50%, rgba(230, 197, 110, 0.25) 100%);
     border: 1px solid transparent;
     background-clip: padding-box, border-box;
     background-origin: border-box;
     border-radius: 20px;
-    padding: 40px; /* Generous breathable padding */
+    padding: 40px;
+    /* Generous breathable padding */
     transition: var(--transition-card);
     text-align: left;
     display: flex;
@@ -1533,22 +1587,24 @@ body {
 
 .trilha-card:hover {
     transform: translateY(-6px);
-    background-image: 
-        linear-gradient(#07122A, #07122A), 
+    background-image:
+        linear-gradient(#07122A, #07122A),
         linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 20px rgba(201, 168, 76, 0.2);
 }
 
 /* CSS-Drawn Toggle Switch Switch (Micro-Animação do Card 2!) */
 .trilha-toggle-icon {
-    margin-bottom: 36px; /* Spacing below toggle switch */
+    margin-bottom: 36px;
+    /* Spacing below toggle switch */
 }
 
 .toggle-track {
     width: 48px;
     height: 24px;
     border-radius: 50px;
-    background: #2E2C37; /* Flat, dark gray capsule from image 2 */
+    background: #2E2C37;
+    /* Flat, dark gray capsule from image 2 */
     display: flex;
     align-items: center;
     padding: 3px;
@@ -1561,7 +1617,8 @@ body {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: #FFFFFF; /* Pure white circle */
+    background-color: #FFFFFF;
+    /* Pure white circle */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     position: absolute;
     left: 3px;
@@ -1570,23 +1627,28 @@ body {
 
 /* Hover active toggle state - Micro-animation */
 .trilha-card:hover .toggle-track {
-    background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%); /* Gold track */
+    background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
+    /* Gold track */
 }
 
 .trilha-card:hover .toggle-dot {
-    left: 27px; /* 48px - 18px - 3px = 27px */
-    background-color: #07122A; /* Dark contrast knob on hover */
+    left: 27px;
+    /* 48px - 18px - 3px = 27px */
+    background-color: #07122A;
+    /* Dark contrast knob on hover */
     box-shadow: none;
 }
 
 .trilha-title {
-    font-size: 1.55rem; /* Larger, high-impact heading from image 2 */
+    font-size: 1.55rem;
+    /* Larger, high-impact heading from image 2 */
     font-weight: 600;
     background: linear-gradient(135deg, #A8863A 0%, #C9A84C 50%, #E6C56E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: #C9A84C; /* Premium VDR Honey-Gold gradient */
+    color: #C9A84C;
+    /* Premium VDR Honey-Gold gradient */
     margin-bottom: 14px;
     font-family: var(--font-main);
     letter-spacing: -0.02em;
@@ -1594,9 +1656,11 @@ body {
 }
 
 .trilha-desc {
-    font-size: 0.95rem; /* Readable font size from image 2 */
+    font-size: 0.95rem;
+    /* Readable font size from image 2 */
     line-height: 1.6;
-    color: #A3A1B2; /* Slightly brighter for premium readability against dark card background */
+    color: #A3A1B2;
+    /* Slightly brighter for premium readability against dark card background */
     font-weight: 400;
 }
 
@@ -1613,9 +1677,11 @@ body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
     .trilha-card {
         padding: 30px;
     }
+
     .trilha-title {
         font-size: 1.35rem;
     }
@@ -1640,7 +1706,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Spans the entire section, acting as a true full-width background cover! */
+    width: 100%;
+    /* Spans the entire section, acting as a true full-width background cover! */
     height: 100%;
     z-index: 1;
     pointer-events: none;
@@ -1663,7 +1730,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right top; /* Prioritizes Bruno Cezar's head and right positioning on widescreen and 4K displays */
+    object-position: right top;
+    /* Prioritizes Bruno Cezar's head and right positioning on widescreen and 4K displays */
 }
 
 
@@ -1680,7 +1748,8 @@ body {
 }
 
 .apresentar-content {
-    max-width: 480px; /* Reduced from 580px to completely avoid overlapping Bruno's arm/shoulder! */
+    max-width: 480px;
+    /* Reduced from 580px to completely avoid overlapping Bruno's arm/shoulder! */
     width: 100%;
 }
 
@@ -1715,18 +1784,21 @@ body {
         min-height: auto;
         display: block;
     }
-    
+
     .apresentar-image-bg {
         position: relative;
         width: 100%;
-        height: 380px; /* fixed height for the image area on mobile */
-        margin-bottom: -50px; /* negative margin to pull the text card upwards on top of the image */
+        height: 380px;
+        /* fixed height for the image area on mobile */
+        margin-bottom: -50px;
+        /* negative margin to pull the text card upwards on top of the image */
     }
-    
+
     .apresentar-img-element {
-        object-position: center top; /* keeps him centered and visible */
+        object-position: center top;
+        /* keeps him centered and visible */
     }
-    
+
     /* Elegant gradient fade at the bottom of the mobile image to blend into the section background */
     .apresentar-image-bg::after {
         content: '';
@@ -1738,25 +1810,26 @@ body {
         background: linear-gradient(to bottom, rgba(7, 18, 42, 0) 0%, #07122A 100%);
         z-index: 2;
     }
-    
+
     .apresentar-container {
         justify-content: center;
         position: relative;
         z-index: 10;
         padding: 0 20px;
     }
-    
+
     .apresentar-content {
         max-width: 100%;
         text-align: center;
-        background: rgba(7, 18, 42, 0.85); /* Soft dark backing to guarantee readability over bottom fade */
+        background: rgba(7, 18, 42, 0.85);
+        /* Soft dark backing to guarantee readability over bottom fade */
         padding: 36px 28px;
         border-radius: 20px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(201, 168, 76, 0.2);
         box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
     }
-    
+
     .apresentar-nome {
         font-size: 2.2rem;
     }
@@ -1830,13 +1903,15 @@ body {
 }
 
 /* Staggering para listas */
-.comparativo-list li, .trilha-card {
+.comparativo-list li,
+.trilha-card {
     opacity: 0;
     transform: translateY(15px);
     transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.revealed .comparativo-list li, .reveal.revealed .trilha-card {
+.reveal.revealed .comparativo-list li,
+.reveal.revealed .trilha-card {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1850,21 +1925,24 @@ body {
     .headline-primary {
         font-size: 2.6rem;
     }
-    
+
     .apresentar-nome {
         font-size: 2.4rem;
     }
-    
-    .hero-container, .apresentar-container {
+
+    .hero-container,
+    .apresentar-container {
         gap: 36px;
     }
 }
 
 /* Tablets (768px) */
 @media (max-width: 768px) {
+
     .carrossel-shadow-left,
     .carrossel-shadow-right {
-        width: 40px; /* Reduced width on mobile to prevent blocking cards */
+        width: 40px;
+        /* Reduced width on mobile to prevent blocking cards */
     }
 
     .headline-card,
@@ -1880,16 +1958,16 @@ body {
         gap: 24px;
         margin-bottom: 40px;
     }
-    
+
     .header-left {
         align-items: center;
         text-align: center;
     }
-    
+
     .section-title-left {
         text-align: center;
     }
-    
+
     .header-right {
         margin: 0 auto;
     }
@@ -1907,7 +1985,8 @@ body {
     }
 
     .hero-bg-img {
-        object-position: center top; /* Align image to top on mobile/tablet to guarantee Bruno's face is fully visible */
+        object-position: center top;
+        /* Align image to top on mobile/tablet to guarantee Bruno's face is fully visible */
     }
 
     .hero-container {
@@ -1917,27 +1996,28 @@ body {
         gap: 16px;
         position: relative;
         z-index: 5;
-        padding-top: 210px; /* Pushes text below Bruno Cezar's face on mobile but pulls everything up to be visible above the fold! */
+        padding-top: 210px;
+        /* Pushes text below Bruno Cezar's face on mobile but pulls everything up to be visible above the fold! */
     }
-    
+
     .hero-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
-    
+
     .headline-primary {
         font-size: 1.85rem;
         line-height: 1.25;
         margin-bottom: 12px;
     }
-    
+
     .subheadline {
         font-size: 0.95rem;
         margin-bottom: 18px;
     }
-    
+
     .event-details {
         align-items: flex-start;
         text-align: left;
@@ -1945,37 +2025,38 @@ body {
         margin-bottom: 16px;
         gap: 10px;
     }
-    
+
     .apresentar-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
     }
-    
+
     .apresentar-content {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .apresentar-image-area {
-        order: -1; /* Imagem no topo */
+        order: -1;
+        /* Imagem no topo */
     }
-    
+
     .comparativo-widget {
         grid-template-columns: 1fr;
         gap: 24px;
     }
-    
-    
+
+
     .card-light {
         padding: 40px 24px;
     }
-    
+
     .comparativo-card {
         padding: 0;
     }
-    
+
     .comparativo-card .card-body {
         padding: 32px 20px;
     }
@@ -1994,7 +2075,8 @@ body {
     }
 
     .hero-container {
-        padding-top: 90px; /* Pull the text container right below the banner and face background */
+        padding-top: 90px;
+        /* Pull the text container right below the banner and face background */
         gap: 8px;
     }
 
@@ -2014,43 +2096,44 @@ body {
         line-height: 1.2;
         margin-bottom: 6px;
     }
-    
+
     .subheadline {
         font-size: 0.75rem;
         line-height: 1.35;
         margin-bottom: 10px;
     }
-    
+
     .section-title {
         font-size: 1.65rem;
     }
-    
+
     .headline-card,
     .comparativo-section .section-title,
     .live-card .section-title {
         font-size: 1.65rem !important;
     }
-    
+
     .headline-live-card {
         font-size: 1.5rem;
     }
-    
+
     .apresentar-nome {
         font-size: 2rem;
     }
-    
-    .avatar-placeholder-wrapper, .bio-placeholder-wrapper {
+
+    .avatar-placeholder-wrapper,
+    .bio-placeholder-wrapper {
         width: 280px;
         height: 350px;
     }
-    
+
     .btn {
         width: 100%;
         min-width: unset;
         padding: 12px 16px;
         font-size: 0.8rem;
     }
-    
+
     .event-details {
         padding: 10px 12px;
         gap: 6px;
@@ -2065,11 +2148,11 @@ body {
     .event-item .icon {
         font-size: 0.9rem;
     }
-    
+
     .comparativo-card .card-body {
         padding: 24px 16px;
     }
-    
+
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -2081,7 +2164,8 @@ body {
    ========================================================================== */
 .vdr-flow-container {
     display: flex;
-    align-items: stretch; /* Forces all 3 cards to stretch to the exact same height */
+    align-items: stretch;
+    /* Forces all 3 cards to stretch to the exact same height */
     justify-content: space-between;
     width: 100%;
     max-width: 1000px;
@@ -2095,20 +2179,21 @@ body {
     flex: 1;
     min-height: 140px;
     position: relative;
-    border-radius: 24px; /* Matches the rounded corners in reference */
+    border-radius: 24px;
+    /* Matches the rounded corners in reference */
     padding: 28px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     /* Double-gradient backgrounds: pad-box for solid blue grad, border-box for gold gradient border */
-    background-image: 
-        linear-gradient(135deg, #091D46 0%, #050D21 100%), 
+    background-image:
+        linear-gradient(135deg, #091D46 0%, #050D21 100%),
         linear-gradient(135deg, #A8863A 0%, #E6C56E 50%, #C9A84C 100%);
     border: 1.5px solid transparent;
     background-clip: padding-box, border-box;
     background-origin: border-box;
-    
+
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(201, 168, 76, 0.05);
     transition: var(--transition-smooth);
     overflow: hidden;
@@ -2117,8 +2202,8 @@ body {
 
 .vdr-flow-card:hover {
     transform: translateY(-5px);
-    background-image: 
-        linear-gradient(135deg, #0A245C 0%, #061129 100%), 
+    background-image:
+        linear-gradient(135deg, #0A245C 0%, #061129 100%),
         linear-gradient(135deg, #F3D17A 0%, #C9A84C 50%, #E6C56E 100%);
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(201, 168, 76, 0.28);
 }
@@ -2130,7 +2215,8 @@ body {
     align-items: flex-start;
     text-align: left;
     z-index: 5;
-    max-width: calc(100% - 60px); /* Leaves space for the ribbon on the right */
+    max-width: calc(100% - 60px);
+    /* Leaves space for the ribbon on the right */
 }
 
 /* Header Row: circular icon and bold gold gradient title */
@@ -2176,13 +2262,16 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: #C9A84C; /* Fallback */
-    font-size: 1.05rem; /* Clean and elegant size */
+    color: #C9A84C;
+    /* Fallback */
+    font-size: 1.05rem;
+    /* Clean and elegant size */
     font-weight: 800;
     letter-spacing: 0.05em;
     margin: 0;
     font-family: var(--font-main);
-    white-space: nowrap; /* Prevents title text wrapping */
+    white-space: nowrap;
+    /* Prevents title text wrapping */
 }
 
 /* Pure White Description text below, in one single line */
@@ -2192,7 +2281,8 @@ body {
     font-weight: 700;
     margin: 0;
     letter-spacing: -0.01em;
-    white-space: nowrap; /* Prevents subtitle text wrapping */
+    white-space: nowrap;
+    /* Prevents subtitle text wrapping */
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
 }
 
@@ -2252,15 +2342,19 @@ body {
     .vdr-flow-container {
         gap: 12px;
     }
+
     .vdr-flow-card {
         padding: 24px 28px;
     }
+
     .vdr-card-title {
         font-size: 0.95rem;
     }
+
     .vdr-card-desc {
         font-size: 1.05rem;
     }
+
     .card-right-ribbon {
         width: 70px;
     }
@@ -2272,23 +2366,21 @@ body {
         gap: 20px;
         align-items: center;
     }
-    
+
     .vdr-flow-card {
         width: 100%;
         max-width: 440px;
         min-height: 120px;
         padding: 24px 28px;
     }
-    
+
     /* Rotate the arrows to point downwards on mobile devices */
     .vdr-flow-connector {
         transform: rotate(90deg);
         margin: -5px 0;
     }
-    
+
     .connector-circle {
         box-shadow: 0 0 8px rgba(201, 168, 76, 0.2);
     }
 }
-
-
