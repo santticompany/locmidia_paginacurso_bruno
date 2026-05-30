@@ -1983,23 +1983,42 @@ body {
 
 /* Mobile pequenos (480px até 320px) */
 @media (max-width: 480px) {
+    .hero-section {
+        padding: 45px 0 20px 0 !important;
+        min-height: unset;
+    }
+
+    .top-announcement-banner {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
     .hero-container {
-        padding-top: 160px; /* Pull everything up on small viewports so button is above the fold */
+        padding-top: 90px; /* Pull the text container right below the banner and face background */
+        gap: 8px;
+    }
+
+    .badge {
+        margin-bottom: 6px;
+        padding: 4px 10px;
+        font-size: 0.62rem;
+    }
+
+    .pre-headline {
+        font-size: 0.75rem;
+        margin-bottom: 4px;
     }
 
     .headline-primary {
-        font-size: 1.5rem;
-        line-height: 1.25;
-    }
-    
-    .pre-headline {
-        font-size: 0.9rem;
+        font-size: 1.25rem;
+        line-height: 1.2;
         margin-bottom: 6px;
     }
     
     .subheadline {
-        font-size: 0.85rem;
-        margin-bottom: 12px;
+        font-size: 0.75rem;
+        line-height: 1.35;
+        margin-bottom: 10px;
     }
     
     .section-title {
@@ -2028,12 +2047,23 @@ body {
     .btn {
         width: 100%;
         min-width: unset;
-        padding: 16px 24px;
-        font-size: 0.85rem;
+        padding: 12px 16px;
+        font-size: 0.8rem;
     }
     
     .event-details {
-        padding: 16px;
+        padding: 10px 12px;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .event-item {
+        font-size: 0.72rem;
+        gap: 6px;
+    }
+
+    .event-item .icon {
+        font-size: 0.9rem;
     }
     
     .comparativo-card .card-body {
