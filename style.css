@@ -383,7 +383,7 @@ body {
 }
 
 .headline-primary {
-    font-size: 3.5rem;
+    font-size: 3.1rem;
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 24px;
@@ -396,7 +396,7 @@ body {
 }
 
 .subheadline {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 36px;
@@ -2008,13 +2008,13 @@ body {
     }
 
     .headline-primary {
-        font-size: 1.85rem;
+        font-size: 2.1rem;
         line-height: 1.25;
         margin-bottom: 12px;
     }
 
     .subheadline {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         margin-bottom: 18px;
     }
 
@@ -2092,16 +2092,16 @@ body {
     }
 
     .headline-primary {
-        font-size: 1.25rem;
+        font-size: 1.45rem;
         line-height: 1.2;
         margin-bottom: 6px;
-    }
-
-    .subheadline {
-        font-size: 0.75rem;
+     }
+ 
+     .subheadline {
+        font-size: 0.85rem;
         line-height: 1.35;
         margin-bottom: 10px;
-    }
+     }
 
     .section-title {
         font-size: 1.65rem;
