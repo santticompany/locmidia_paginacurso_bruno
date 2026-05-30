@@ -1914,10 +1914,10 @@ body {
         display: flex;
         flex-direction: column;
         text-align: center;
-        gap: 32px;
+        gap: 16px;
         position: relative;
         z-index: 5;
-        padding-top: 360px; /* Pushes the text down below Bruno Cezar's face on mobile screens */
+        padding-top: 210px; /* Pushes text below Bruno Cezar's face on mobile but pulls everything up to be visible above the fold! */
     }
     
     .hero-content {
@@ -1928,16 +1928,22 @@ body {
     }
     
     .headline-primary {
-        font-size: 2.2rem;
+        font-size: 1.85rem;
+        line-height: 1.25;
+        margin-bottom: 12px;
     }
     
     .subheadline {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 18px;
     }
     
     .event-details {
         align-items: flex-start;
         text-align: left;
+        padding: 16px;
+        margin-bottom: 16px;
+        gap: 10px;
     }
     
     .apresentar-container {
@@ -1977,12 +1983,23 @@ body {
 
 /* Mobile pequenos (480px até 320px) */
 @media (max-width: 480px) {
+    .hero-container {
+        padding-top: 160px; /* Pull everything up on small viewports so button is above the fold */
+    }
+
     .headline-primary {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        line-height: 1.25;
     }
     
     .pre-headline {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .subheadline {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
     }
     
     .section-title {
