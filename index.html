@@ -38,7 +38,7 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=1.1.4">
+    <link rel="stylesheet" href="style.css?v=1.1.5">
 </head>
 
 <body>
@@ -257,7 +257,19 @@
 
         <!-- Video Testimonials Carousel -->
         <div class="video-carousel-wrapper">
-
+            <!-- Navigation Buttons -->
+            <button class="nav-btn nav-btn-left" id="video-nav-left" aria-label="Anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn nav-btn-right" id="video-nav-right" aria-label="Próximo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
 
             <div class="video-carousel-scroll" id="video-carousel-scroll">
 
@@ -316,10 +328,12 @@
             </div>
         </div>
 
-        <div class="cta-wrapper text-center">
-            <a href="https://chat.whatsapp.com/exemplo" id="cta-depoimentos" class="btn btn-primary btn-glow-gold">
-                ENTRAR NO GRUPO VIP AGORA
-            </a>
+        <div class="container">
+            <div class="cta-wrapper text-center">
+                <a href="https://chat.whatsapp.com/exemplo" id="cta-depoimentos" class="btn btn-primary btn-glow-gold">
+                    ENTRAR NO GRUPO VIP AGORA
+                </a>
+            </div>
         </div>
     </section>
 

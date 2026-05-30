@@ -895,7 +895,15 @@ body {
 
 @media (max-width: 1024px) {
     .video-carousel-wrapper .nav-btn {
-        display: none;
+        display: flex;
+        width: 36px;
+        height: 36px;
+    }
+    .video-carousel-wrapper .nav-btn-left {
+        left: 12px;
+    }
+    .video-carousel-wrapper .nav-btn-right {
+        right: 12px;
     }
 }
 
